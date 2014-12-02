@@ -43,4 +43,5 @@ module.exports = function(grunt) {
 
   grunt.registerTask('test', ['jshint', 'simplemocha']);
   grunt.registerTask('build', ['jshint', 'clean', 'browserify', 'copy:dev']);
+  grunt.registerTask('default', ['jshint', 'simplemocha', 'clean', 'browserify', 'copy:dev']);
 };
