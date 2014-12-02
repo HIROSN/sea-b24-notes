@@ -17,13 +17,13 @@
       <div data-ng-repeat="note in notes">
         <div data-ng-hide="note.editing">
           <p>{{note.noteBody}}</p>
-          <button data-ng-click="note.editing = true">Edit</button>
+          <button data-ng-click="note.temp = note.noteBody; note.editing = true">Edit</button>
           <button data-ng-click="deleteNote(note)">Delete</button>
         </div>
         <div data-ng-show="note.editing">
           <input type="text" data-ng-model="note.noteBody">
           <button data-ng-click="saveNote(note)">Save</button>
-          <button data-ng-click="note.editing = false">Cancel</button>
+          <button data-ng-click="note.noteBody = note.temp; note.editing = false">Cancel</button>
         </div>
       </div>
     </div>
